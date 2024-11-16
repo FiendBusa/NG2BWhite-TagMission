@@ -1,4 +1,8 @@
-Lies of P Boss Rush Mod InstructionsImportant Notes:
+Download Pre-Built: https://www.nexusmods.com/liesofp/mods/197
+
+Lies of P Boss Rush Mod Instructions
+
+Important Notes:
 Recommended for NG+0 Only: A fix for the high riposte bug and damage scaling in NG+ will be included in the next update.
 Boss Progress Tracking: Boss progress will be tracked as long as the HOME key is not pressed. Using a Stargazer or visiting other areas in the game will not reset progress.
 Next Update Features: The ability to customize boss types will be included.
@@ -49,11 +53,9 @@ Fiend Busa - Creator of the Boss Rush mod.
 Sunbeam - Provided tools to expose Unreal Engine objects. (Details)
 Samjviana - Created the mod loader. (Mod Loader)
 DEBUGG0x64 - Provided the damage address. (Details)
-Resources
-Virtual Key Codes for Hotkey Modification:
-Virtual Key Codes Documentation
-Boss Rush Mod Source Code:
-GitHub Repository
+
+
+
 bossrush.ini Template
 
 [GENERAL]
