@@ -40,19 +40,19 @@ struct BlackRabbit {
 
 BlackRabbit blackRabbit1 = {
     {
-        {L"Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50},
-        {L"BRabbit_Female_Boss_00", 16109.74, 24356.96, 5740.17},
-        {L"BRabbit_NormalMale_Boss_00", 15927.28, 25043.33, 5741.02},
-        {L"BRabbit_TallMale_Boss_00", 17837.36, 24912.91, 5739.98}
+        {L"CH05_Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50},
+        {L"Stalker_BRabbit_Female_Boss_00", 16109.74, 24356.96, 5740.17},
+        {L"Stalker_BRabbit_NormalMale_Boss_00", 15927.28, 25043.33, 5741.02},
+        {L"Stalker_BRabbit_TallMale_Boss_00", 17837.36, 24912.91, 5739.98}
     }
 };
 
 BlackRabbit blackRabbit2 = {
     {
-        {L"BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50},
-        {L"BRabbit_Female_Boss_01", 16109.74, 24356.96, 5740.17},
-        {L"BRabbit_NormalMale_Boss_01", 15927.28, 25043.33, 5741.02},
-        {L"BRabbit_TallMale_Boss_01", 17837.36, 24912.91, 5739.98}
+        {L"CH11_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50},
+        {L"Stalker_BRabbit_Female_Boss_01", 16109.74, 24356.96, 5740.17},
+        {L"Stalker_BRabbit_NormalMale_Boss_01", 15927.28, 25043.33, 5741.02},
+        {L"Stalker_BRabbit_TallMale_Boss_01", 17837.36, 24912.91, 5739.98}
     }
 };
 
@@ -324,7 +324,7 @@ std::vector<BossInfo> bosses = {
     {L"CH04_Carcass_FallenArchBishop_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     // BLACK RABBIT
-    {L"Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH05_Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     //WHITE LADY
     {L"Stalker_WhiteStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
@@ -354,7 +354,7 @@ std::vector<BossInfo> bosses = {
 
 
        // BLACK RABBIT
-       {L"Stalker_BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
+       {L"CH11_Stalker_BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
 
        //STALKER CAT
       {L"Stalker_Cat_00", 17177.75, 24574.95, 5738.50, 104.56, false},
