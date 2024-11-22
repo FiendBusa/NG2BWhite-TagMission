@@ -40,19 +40,19 @@ struct BlackRabbit {
 
 BlackRabbit blackRabbit1 = {
     {
-        {L"CH05_Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50},
-        {L"CH05_Stalker_BRabbit_Female_Boss_00", 16109.74, 24356.96, 5740.17},
-        {L"CH05_Stalker_BRabbit_NormalMale_Boss_00", 15927.28, 25043.33, 5741.02},
-        {L"CH05_Stalker_BRabbit_TallMale_Boss_00", 17837.36, 24912.91, 5739.98}
+        {L"Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50},
+        {L"BRabbit_Female_Boss_00", 16109.74, 24356.96, 5740.17},
+        {L"BRabbit_NormalMale_Boss_00", 15927.28, 25043.33, 5741.02},
+        {L"BRabbit_TallMale_Boss_00", 17837.36, 24912.91, 5739.98}
     }
 };
 
 BlackRabbit blackRabbit2 = {
     {
-        {L"CH11_Stalker_BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50},
-        {L"CH11_Stalker_BRabbit_Female_Boss_01", 16109.74, 24356.96, 5740.17},
-        {L"CH11_Stalker_BRabbit_NormalMale_Boss_01", 15927.28, 25043.33, 5741.02},
-        {L"CH11_Stalker_BRabbit_TallMale_Boss_01", 17837.36, 24912.91, 5739.98}
+        {L"BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50},
+        {L"BRabbit_Female_Boss_01", 16109.74, 24356.96, 5740.17},
+        {L"BRabbit_NormalMale_Boss_01", 15927.28, 25043.33, 5741.02},
+        {L"BRabbit_TallMale_Boss_01", 17837.36, 24912.91, 5739.98}
     }
 };
 
@@ -310,13 +310,13 @@ std::vector<BossInfo> bosses = {
     {L"CH01_Puppet_Fguide_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     //DONKEY
-   {L"CH02_Stalker_MadStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+   {L"Stalker_MadStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
 
     {L"CH02_Puppet_Judge_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     //STALKER SURVIVOR
-    {L"CH03_Stalker_SurvivorStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"Stalker_SurvivorStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
 
     {L"CH03_Puppet_FireEater_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
@@ -324,10 +324,10 @@ std::vector<BossInfo> bosses = {
     {L"CH04_Carcass_FallenArchBishop_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     // BLACK RABBIT
-    {L"CH05_Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     //WHITE LADY
-    {L"CH06_Stalker_WhiteStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"Stalker_WhiteStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     //CLOWN
     {L"CH06_Puppet_Clown_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
@@ -343,33 +343,33 @@ std::vector<BossInfo> bosses = {
       {L"CH09_Stalker_Weasel_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
       //SWAMP
-      {L"CH08_Carcass_GreenHunter_Main_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
-      {L"CH08_Carcass_GreenHunter_Fusion_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"Carcass_GreenHunter_Sub_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      // {L"CH08_Carcass_GreenHunter_Fusion_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
-      //ILLUSION
-      {L"CH09_Reborner_Illusion_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+       //ILLUSION
+       {L"CH09_Reborner_Illusion_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
-      //CORRUPTED PUP
-      {L"CH09_Carcass_GraveKeeper_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
-
-
-      // BLACK RABBIT
-      {L"CH11_Stalker_BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
-
-      //STALKER CAT
-     {L"CH12_Stalker_Cat_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+       //CORRUPTED PUP
+       {L"CH09_Carcass_GraveKeeper_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
 
-      {L"CH12_Reborner_Raxasia_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
-      {L"CH12_Reborner_Raxasia_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
+       // BLACK RABBIT
+       {L"Stalker_BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
 
-      //STALKER RED FOX
-      {L"CH13_Stalker_Fox_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+       //STALKER CAT
+      {L"Stalker_Cat_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
-      {L"CH13_Reborner_Simon_Boss_P1", 17177.75, 24574.95, 5738.50, 104.56, false},
-      {L"CH13_Reborner_Simon_Boss_P2", 17177.75, 24574.95, 5738.50, 104.56, false},
-      {L"CH13_Puppet_1stPinoccio_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
-      {L"CH13_Puppet_1stPinoccio_Boss_P2_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+
+       {L"CH12_Reborner_Raxasia_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+       {L"CH12_Reborner_Raxasia_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
+
+       //STALKER RED FOX
+       {L"Stalker_Fox_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+
+       {L"CH13_Reborner_Simon_Boss_P1", 17177.75, 24574.95, 5738.50, 104.56, false},
+       {L"CH13_Reborner_Simon_Boss_P2", 17177.75, 24574.95, 5738.50, 104.56, false},
+       {L"CH13_Puppet_1stPinoccio_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+       {L"CH13_Puppet_1stPinoccio_Boss_P2_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 };
 
 
