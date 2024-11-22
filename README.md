@@ -3,7 +3,7 @@ Download Pre-Built: https://www.nexusmods.com/liesofp/mods/197
 # Lies of P Boss Rush Mod Instructions
 
 ## Important Notes
-- **Recommended for NG+0 Only:** A fix for the high riposte bug and damage scaling in NG+ will be included in the next update.
+- **Recommended for NG+0 Only:** A fix for the high riposte bug and damage scaling in NG+ will be included in the next update. Fixed as of Friday, November 22, 2024
 - **Boss Progress Tracking:** Boss progress will be tracked as long as the **HOME** key is not pressed. Using a Stargazer or visiting other areas in the game will not reset progress.
 - **Next Update Features:** The ability to customize boss types will be included.
 
