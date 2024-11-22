@@ -40,19 +40,19 @@ struct BlackRabbit {
 
 BlackRabbit blackRabbit1 = {
     {
-        {L"Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50},
-        {L"Stalker_BRabbit_Female_Boss_00", 16109.74, 24356.96, 5740.17},
-        {L"Stalker_BRabbit_NormalMale_Boss_00", 15927.28, 25043.33, 5741.02},
-        {L"Stalker_BRabbit_TallMale_Boss_00", 17837.36, 24912.91, 5739.98}
+        {L"CH05_Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50},
+        {L"CH05_Stalker_BRabbit_Female_Boss_00", 16109.74, 24356.96, 5740.17},
+        {L"CH05_Stalker_BRabbit_NormalMale_Boss_00", 15927.28, 25043.33, 5741.02},
+        {L"CH05_Stalker_BRabbit_TallMale_Boss_00", 17837.36, 24912.91, 5739.98}
     }
 };
 
 BlackRabbit blackRabbit2 = {
     {
-        {L"Stalker_BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50},
-        {L"Stalker_BRabbit_Female_Boss_01", 16109.74, 24356.96, 5740.17},
-        {L"Stalker_BRabbit_NormalMale_Boss_01", 15927.28, 25043.33, 5741.02},
-        {L"Stalker_BRabbit_TallMale_Boss_01", 17837.36, 24912.91, 5739.98}
+        {L"CH11_Stalker_BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50},
+        {L"CH11_Stalker_BRabbit_Female_Boss_01", 16109.74, 24356.96, 5740.17},
+        {L"CH11_Stalker_BRabbit_NormalMale_Boss_01", 15927.28, 25043.33, 5741.02},
+        {L"CH11_Stalker_BRabbit_TallMale_Boss_01", 17837.36, 24912.91, 5739.98}
     }
 };
 
@@ -306,131 +306,70 @@ void ApplyHooks(HookInfo* hooks, int count, DWORD_PTR baseAddress) {
     }
 }
 
-//bool InitializeBass() {
-//
-//    if (!BASS_Init(-1, 44100, 0, 0, nullptr)) {
-//        DWORD errorCode = BASS_ErrorGetCode();
-//        std::string errorMsg = "Failed to initialize BASS: Error Code " + std::to_string(errorCode);
-//        //MessageBoxA(nullptr, errorMsg.c_str(), "Error", MB_ICONERROR);
-//        return false;
-//    }
-//
-//    //MessageBoxA(nullptr, "BASS Initialized", "Debug", MB_OK);
-//    return true;
-//
-//}
-
-//bool PlayWavFile(const wchar_t* filePath, float volume, bool waitForSound) {
-//    if (volume < 0.0f) {
-//        volume = 25.00f;
-//    }
-//
-//    // Stop the currently playing stream if it exists
-//    if (currentStream) {
-//        BASS_ChannelStop(currentStream);
-//        BASS_StreamFree(currentStream); // Free the stream to release memory
-//    }
-//
-//    // Try to create a stream for the specified .wav file
-//    currentStream = BASS_StreamCreateFile(FALSE, filePath, 0, 0, BASS_UNICODE);
-//
-//    if (!currentStream) {
-//        DWORD errorCode = BASS_ErrorGetCode();
-//        std::wstring errorMsg = L"Failed to load file: Error Code " + std::to_wstring(errorCode);
-//        MessageBoxW(nullptr, errorMsg.c_str(), L"Error", MB_ICONERROR);
-//        return false;
-//    }
-//
-//    // Set the volume for the stream (0.0 to 1.0)
-//    if (!BASS_ChannelSetAttribute(currentStream, BASS_ATTRIB_VOL, volume)) {
-//        DWORD errorCode = BASS_ErrorGetCode();
-//        std::wstring errorMsg = L"Failed to set volume: Error Code " + std::to_wstring(errorCode);
-//        MessageBoxW(nullptr, errorMsg.c_str(), L"Error", MB_ICONERROR);
-//    }
-//
-//    // Play the loaded .wav file
-//    if (!BASS_ChannelPlay(currentStream, FALSE)) {
-//        DWORD errorCode = BASS_ErrorGetCode();
-//        std::wstring errorMsg = L"Failed to play sound: Error Code " + std::to_wstring(errorCode);
-//        MessageBoxW(nullptr, errorMsg.c_str(), L"Error", MB_ICONERROR);
-//        BASS_StreamFree(currentStream); // Clean up stream resources
-//        currentStream = 0;
-//        return false;
-//    }
-//
-//    if (waitForSound) {
-//        // Wait while the sound is playing
-//        while (BASS_ChannelIsActive(currentStream) == BASS_ACTIVE_PLAYING) {
-//            Sleep(10); // Sleep to reduce CPU usage
-//        }
-//    }
-//
-//    return true;
-//}
-
 std::vector<BossInfo> bosses = {
-    {L"Puppet_Fguide_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH01_Puppet_Fguide_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     //DONKEY
-   {L"Stalker_MadStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+   {L"CH02_Stalker_MadStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
 
-    {L"Puppet_Judge_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH02_Puppet_Judge_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     //STALKER SURVIVOR
-    {L"Stalker_SurvivorStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH03_Stalker_SurvivorStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
 
-    {L"Puppet_FireEater_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
-    {L"Carcass_FallenArchBishop_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
-    {L"Carcass_FallenArchBishop_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH03_Puppet_FireEater_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH04_Carcass_FallenArchBishop_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH04_Carcass_FallenArchBishop_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     // BLACK RABBIT
-    {L"Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH05_Stalker_BRabbit_StrongMale_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     //WHITE LADY
-    {L"Stalker_WhiteStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH06_Stalker_WhiteStalker_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     //CLOWN
-    {L"Puppet_Clown_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH06_Puppet_Clown_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
-    {L"Puppet_PuppetKing_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
-    {L"Puppet_PuppetKingP3_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH06_Puppet_PuppetKing_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+    {L"CH06_Puppet_PuppetKingP3_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
     //VICTOR
-     {L"Reborner_Victor_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
-     {L"Reborner_Victor_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
+     {L"CH07_Reborner_Victor_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+     {L"CH07_Reborner_Victor_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
 
      //WEASEL
-      {L"Stalker_Weasel_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH09_Stalker_Weasel_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
       //SWAMP
-      {L"Carcass_GreenHunter_Sub_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH08_Carcass_GreenHunter_Main_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH08_Carcass_GreenHunter_Fusion_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
       //ILLUSION
-      {L"Reborner_Illusion_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH09_Reborner_Illusion_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
       //CORRUPTED PUP
-      {L"Carcass_GraveKeeper_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH09_Carcass_GraveKeeper_Seed_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
 
       // BLACK RABBIT
-      {L"Stalker_BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH11_Stalker_BRabbit_StrongMale_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
 
       //STALKER CAT
-     {L"Stalker_Cat_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+     {L"CH12_Stalker_Cat_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
 
-      {L"Reborner_Raxasia_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
-      {L"Reborner_Raxasia_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH12_Reborner_Raxasia_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH12_Reborner_Raxasia_Boss_01", 17177.75, 24574.95, 5738.50, 104.56, false},
 
       //STALKER RED FOX
-      {L"Stalker_Fox_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH13_Stalker_Fox_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 
-      {L"Reborner_Simon_Boss_P1", 17177.75, 24574.95, 5738.50, 104.56, false},
-      {L"Reborner_Simon_Boss_P2", 17177.75, 24574.95, 5738.50, 104.56, false},
-      {L"Puppet_1stPinoccio_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
-      {L"Puppet_1stPinoccio_Boss_P2_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH13_Reborner_Simon_Boss_P1", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH13_Reborner_Simon_Boss_P2", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH13_Puppet_1stPinoccio_Boss_00", 17177.75, 24574.95, 5738.50, 104.56, false},
+      {L"CH13_Puppet_1stPinoccio_Boss_P2_00", 17177.75, 24574.95, 5738.50, 104.56, false},
 };
 
 
@@ -625,6 +564,67 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD dwReason, LPVOID lpReserved) {
 }
 
 
+//bool InitializeBass() {
+//
+//    if (!BASS_Init(-1, 44100, 0, 0, nullptr)) {
+//        DWORD errorCode = BASS_ErrorGetCode();
+//        std::string errorMsg = "Failed to initialize BASS: Error Code " + std::to_string(errorCode);
+//        //MessageBoxA(nullptr, errorMsg.c_str(), "Error", MB_ICONERROR);
+//        return false;
+//    }
+//
+//    //MessageBoxA(nullptr, "BASS Initialized", "Debug", MB_OK);
+//    return true;
+//
+//}
+
+//bool PlayWavFile(const wchar_t* filePath, float volume, bool waitForSound) {
+//    if (volume < 0.0f) {
+//        volume = 25.00f;
+//    }
+//
+//    // Stop the currently playing stream if it exists
+//    if (currentStream) {
+//        BASS_ChannelStop(currentStream);
+//        BASS_StreamFree(currentStream); // Free the stream to release memory
+//    }
+//
+//    // Try to create a stream for the specified .wav file
+//    currentStream = BASS_StreamCreateFile(FALSE, filePath, 0, 0, BASS_UNICODE);
+//
+//    if (!currentStream) {
+//        DWORD errorCode = BASS_ErrorGetCode();
+//        std::wstring errorMsg = L"Failed to load file: Error Code " + std::to_wstring(errorCode);
+//        MessageBoxW(nullptr, errorMsg.c_str(), L"Error", MB_ICONERROR);
+//        return false;
+//    }
+//
+//    // Set the volume for the stream (0.0 to 1.0)
+//    if (!BASS_ChannelSetAttribute(currentStream, BASS_ATTRIB_VOL, volume)) {
+//        DWORD errorCode = BASS_ErrorGetCode();
+//        std::wstring errorMsg = L"Failed to set volume: Error Code " + std::to_wstring(errorCode);
+//        MessageBoxW(nullptr, errorMsg.c_str(), L"Error", MB_ICONERROR);
+//    }
+//
+//    // Play the loaded .wav file
+//    if (!BASS_ChannelPlay(currentStream, FALSE)) {
+//        DWORD errorCode = BASS_ErrorGetCode();
+//        std::wstring errorMsg = L"Failed to play sound: Error Code " + std::to_wstring(errorCode);
+//        MessageBoxW(nullptr, errorMsg.c_str(), L"Error", MB_ICONERROR);
+//        BASS_StreamFree(currentStream); // Clean up stream resources
+//        currentStream = 0;
+//        return false;
+//    }
+//
+//    if (waitForSound) {
+//        // Wait while the sound is playing
+//        while (BASS_ChannelIsActive(currentStream) == BASS_ACTIVE_PLAYING) {
+//            Sleep(10); // Sleep to reduce CPU usage
+//        }
+//    }
+//
+//    return true;
+//}
 
 
 
