@@ -181,7 +181,7 @@ DWORD WINAPI MainThread(LPVOID param) {
     
 
     if (lopBaseAddress == 0) {
-        MessageBoxA(NULL, "Failed to get base address of modules", "ERROR", MB_OK);
+        MessageBoxA(NULL, "Failed to get base address of modules. \nEnemy HP will NOT be scaled", "ERROR", MB_OK);
         return 0;
     }
 

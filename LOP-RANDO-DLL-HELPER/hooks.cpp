@@ -58,11 +58,6 @@ void  __attribute__((naked))InjectLvlHelper() {
         "repe cmpsb;"
         "je setChapter3;"
 
-        //CHAPTER 4
-        "lea rdi, qword ptr [rip+LV_Inner_Cathedral];"
-        "movzx rcx, byte ptr [rip+LV_Inner_Cathedral_Size];"
-        "repe cmpsb;"
-        "je setChapter4;"
 
         //CHAPTER 5
         "lea rdi, qword ptr [rip+LV_Krat_Old_Town];"
@@ -81,12 +76,6 @@ void  __attribute__((naked))InjectLvlHelper() {
         "movzx rcx, byte ptr [rip+LV_Outer_Exhibition_Size];"
         "repe cmpsb;"
         "je setChapter7;"
-
-        //CHAPTER 8
-        "lea rdi, qword ptr [rip+LV_Outer_Grave];"
-        "movzx rcx, byte ptr [rip+LV_Outer_Grave_Size];"
-        "repe cmpsb;"
-        "je setChapter8;"
 
         //CHAPTER 9
         "lea rdi, qword ptr [rip+LV_Outer_CentralStatinB];"
@@ -111,6 +100,18 @@ void  __attribute__((naked))InjectLvlHelper() {
         "movzx rcx, byte ptr [rip+LV_Monastery_B_Size];"
         "repe cmpsb;"
         "je setChapter13;"
+
+        //CHAPTER 4
+        "lea rdi, qword ptr [rip+LV_Inner_Cathedral];"
+        "movzx rcx, byte ptr [rip+LV_Inner_Cathedral_Size];"
+        "repe cmpsb;"
+        "je setChapter4;"
+
+        //CHAPTER 8
+        "lea rdi, qword ptr [rip+LV_Outer_Grave];"
+        "movzx rcx, byte ptr [rip+LV_Outer_Grave_Size];"
+        "repe cmpsb;"
+        "je setChapter8;"
 
         "jmp exitHelper;"
 
