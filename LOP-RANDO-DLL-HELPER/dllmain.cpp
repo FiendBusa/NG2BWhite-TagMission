@@ -173,7 +173,7 @@ void WriteMemory(void* address, const void* buffer, size_t size) {
 
 
 DWORD WINAPI MainThread(LPVOID param) {
-    Sleep(20000);
+    Sleep(8000);
 
     lopBaseAddress = (DWORD_PTR)GetModuleHandle(L"LOP-Win64-Shipping.exe");
 

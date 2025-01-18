@@ -172,6 +172,7 @@ const int boss_hp_data[] = {
 const size_t boss_hp_data_size = sizeof(boss_hp_data) / sizeof(boss_hp_data[0]);
 
 const int stalker_hp_data[] = {
+    560,//CHP1
     4696, // MAD DONKEY CH2
     6437, // SURVIVOR CH3
     6183, // Pilgrim CH4
@@ -210,7 +211,8 @@ const int miniboss_hp_data[] = {
 
 
 const int miniboss_hp_data_assign[] = {
-    1584,//CH1
+    550,//CHP1
+    1584,//CH2
     2980,//CH2-CH4
     9871,//CH5-CH6
     11023,//CH7-CH11
