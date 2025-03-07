@@ -321,7 +321,7 @@ DWORD WINAPI MainThread(LPVOID param) {
     Sleep(2000);
 
     baseAddress = (DWORD_PTR)GetModuleHandle(L"gamemodule.dll");
-  
+
 
 
     if (baseAddress == 0) {
@@ -344,23 +344,27 @@ DWORD WINAPI MainThread(LPVOID param) {
     ApplyHooks(hooks, hookSize, baseAddress);
 
     while (true) {
+
+
         uint16_t currentLevel = *(uint16_t*)currentLevelAddress;
-        if ((isTagMission(currentLevel) || isAcolyteMission(currentLevel)) && *(uint8_t*)gameModeAddress == 0x08) {
-            *(uint8_t*)exitToMainMenuAddress = 0x01;
+        if (isTagMission(currentLevel) || isAcolyteMission(currentLevel)) {
+            *(uint8_t*)ccFlagAddress = 0x01;
+
+            if (*(uint8_t*)gameModeAddress == 0x08) {
+                *(uint8_t*)exitToMainMenuAddress = 0x01;
+            }
+
+        }
+        else {
+            *(uint8_t*)ccFlagAddress = 0x00;
         }
         Sleep(1000);
     }
-       
-            
-        
-    
-
-    
-   
-  
-
-    return 0;
 }
+       
+      
+
+
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD dwReason, LPVOID lpReserved) {
 
