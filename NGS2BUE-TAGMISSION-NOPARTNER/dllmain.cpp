@@ -352,11 +352,9 @@ DWORD WINAPI MainThread(LPVOID param) {
 
             if (*(uint8_t*)gameModeAddress == 0x08) {
                 *(uint8_t*)exitToMainMenuAddress = 0x01;
+                *(uint8_t*)ccFlagAddress = 0x00;
             }
 
-        }
-        else {
-            *(uint8_t*)ccFlagAddress = 0x00;
         }
         Sleep(1000);
     }
