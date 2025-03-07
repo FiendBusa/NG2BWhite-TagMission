@@ -8,6 +8,52 @@ struct Coords {
     float x, y, z, w;
 };
 
+struct LevelData {
+    uint16_t missionID;
+    float x, y, z, w;
+};
+
+//ACOLYTE WILL STILL PULL CORRECT COORDS FOR WHATEVER REASON
+const LevelData levelDataArray[] = {
+    // WARRIOR
+    {0x0052, -49.30f,  87.06f,  276.15f,  0.00f},
+    {0x0053, -51.95f,  21.38f,  218.86f,  0.00f},
+    {0x0054, -155.80f, -25.31f,  86.72f,  0.00f},
+    {0x0055, -205.00f,  29.76f, -51.00f,  0.00f},
+    {0x0056, 1.25f,   14.85f,  128.00f,  0.00f},
+    {0x0057, 8.00f,  305.24f,  -38.00f,  0.00f},
+    {0x0058, 155.25f,   5.87f, -256.00f,  0.00f},
+    {0x0059, 196.25f,  78.68f,  155.00f,  0.00f},
+    {0x005A, 156.25f,   2.44f,  155.08f,  0.00f},
+    {0x005B, -27.80f, -53.24f, -124.30f,  0.00f},
+
+    // MENTOR
+    {0x005C, -1.25f,  0.01f,  -4.65f,   0.00f},
+    {0x005D, 95.00f,  7.35f, -108.00f,  0.00f},
+    {0x005E, -205.00f,  29.76f,  -51.00f,  0.00f},
+    {0x005F, 156.30f,  5.22f, -120.30f,  0.00f},
+    {0x0060, 8.00f,  305.24f, -38.00f,  0.00f},
+
+    // MASTER
+    {0x0066, -153.10f, -25.31f,  69.25f,   0.00f},
+    {0x0067, 395.98f,   30.06f, -190.00f,  0.00f},
+    {0x0068, 117.00f,  311.76f,  510.00f,  0.00f},
+    {0x0069, -1.25f,    1.00f,  140.35f,  0.00f},
+    {0x006A, 1.25f,  -223.27f,  190.00f,  0.00f},
+
+    // UN 
+    {0x0070, 1.25f,  -223.27f,  190.00f,  0.00f},
+    {0x0071, 156.25f,   2.44f,  155.08f,  0.00f},
+    {0x0072, 58.50f,    3.53f,  -41.25f,  0.00f},
+    {0x0073, -52.65f,  86.93f,  267.00f,  0.00f},
+    {0x0074, -896.55f, 597.44f, -567.48f,  0.00f}
+};
+
+const uint16_t acolyteMissions[] = {
+    0x0038, 0x0039, 0x003A, 0x003B, 0x003C,
+    0x003D, 0x003E, 0x003F, 0x0040, 0x0041
+};
+
 extern "C" DWORD_PTR baseAddress = 0;
 
 extern "C" uintptr_t returnInjectCoordsTag = 0;
@@ -20,51 +66,35 @@ extern "C" Coords coordsToAssign = { 0.00, 0.00, 0.00, 0.00 };
 
 extern "C" uintptr_t inventoryStartAddress = 0x3625848;
 
+extern "C" uintptr_t exitToMainMenuAddress = 0x222EE98;
+
+extern "C" uintptr_t gameModeAddress = 0x222EE9C;
+
+extern "C" uintptr_t ccFlagAddress = 0x222EE92;
+
+
 extern "C" void SetTagMissionCoords(Coords* coords, uint16_t currentLevel) {
-    
-    //ACOLYTE WILL STILL PULL CORRECT COORDS FOR WHATEVER REASON
-    
-    switch (currentLevel) {
-    //WARRIOR
-    case 0x0052: *coords = { -49.30,  87.06,  276.15,  0.00 }; break;
-    case 0x0053: *coords = { -51.95,  21.38,  218.86,  0.00 }; break;
-    case 0x0054: *coords = { -155.80, -25.31,  86.72,  0.00 }; break;
-    case 0x0055: *coords = { -205.00,  29.76, -51.00,  0.00 }; break;
-    case 0x0056: *coords = { 1.25,   14.85,  128.00,  0.00 }; break;
-    case 0x0057: *coords = { 8.00,  305.24,  -38.00,  0.00 }; break;
-    case 0x0058: *coords = { 155.25,   5.87, -256.00,  0.00 }; break;
-    case 0x0059: *coords = { 196.25,  78.68,  155.00,  0.00 }; break;
-    case 0x005A: *coords = { 156.25,   2.44,  155.08,  0.00 }; break;
-    case 0x005B: *coords = { -27.80, -53.24, -124.30,  0.00 }; break;
 
-    //MENTOR
-    case 0x005C: *coords = { -1.25,  0.01,  -4.65,   0.00 }; break;
-    case 0x005D: *coords = { 95.00,  7.35, -108.00,  0.00 }; break;
-    case 0x005E: *coords = { -205.00,  29.76,  -51.00,  0.00 }; break;
-    case 0x005F: *coords = { 156.30,  5.22, -120.30,  0.00 }; break;
-    case 0x0060: *coords = { 8.00,  305.24, -38.00,  0.00 }; break;
-
-    //MASTER
-    case 0x0066: *coords = { -153.10, -25.31,  69.25,   0.00 }; break;
-    case 0x0067: *coords = { 395.98,   30.06, -190.00,  0.00 }; break;
-    case 0x0068: *coords = { 117.00,  311.76,  510.00,  0.00 }; break;
-    case 0x0069: *coords = { -1.25,    1.00,  140.35,  0.00 }; break;
-    case 0x006A: *coords = { 1.25,  -223.27,  190.00,  0.00 }; break;
-
-    //UN 
-    case 0x0070: *coords = { 1.25,  -223.27,  190.00,  0.00 }; break;
-    case 0x0071: *coords = { 156.25,   2.44,  155.08,  0.00 }; break;
-    case 0x0072: *coords = { 58.50,    3.53,  -41.25,  0.00 }; break;
-    case 0x0073: *coords = { -52.65,  86.93,  267.00,  0.00 }; break;
-    case 0x0074: *coords = { -896.55, 597.44, -567.48,  0.00 }; break;
-
-   
-    default: *coords = { 0.00, 0.00, 0.00, 0.00 }; break;
+    for (auto& levelID : levelDataArray) {
+        if (levelID.missionID == currentLevel) {
+            *coords = { levelID.x, levelID.y, levelID.z, levelID.w };
+            return;
+        }
+        *coords = { 0.00, 0.00, 0.00, 0.00 };
     }
+
 }
 
+bool isTagMission(uint16_t currentLevel) {
+    for (auto& level : levelDataArray) {
+        if (level.missionID == currentLevel) { return true; }
+    }
+    return false;
+}
 
-
+bool isAcolyteMission(uint16_t missionID) {
+    return std::find(std::begin(acolyteMissions), std::end(acolyteMissions), missionID) != std::end(acolyteMissions);
+}
 
 void  __attribute__((naked))InjectCoordsTag() {
 
@@ -134,6 +164,7 @@ void  __attribute__((naked))InjectCoordsTag() {
         "comiss xmm0,xmm14;"
         "je exitCoordsTagMission;"
         "movaps xmm3,xmm0;"
+        "mov byte ptr [rip + ccFlagAddress],0x01;"
         
         "setWeapons:"
         "mov rax,qword ptr [rip+inventoryStartAddress];"
@@ -304,8 +335,25 @@ DWORD WINAPI MainThread(LPVOID param) {
     currentLevelAddress = baseAddress + 0x222EEC8;
     coordsAddress = baseAddress + 0x6C52680;
     inventoryStartAddress += baseAddress;
+    exitToMainMenuAddress += baseAddress;
+    gameModeAddress += baseAddress;
+    ccFlagAddress += baseAddress;
+
+
     int hookSize = sizeof(hooks) / sizeof(HookInfo);
     ApplyHooks(hooks, hookSize, baseAddress);
+
+    while (true) {
+        uint16_t currentLevel = *(uint16_t*)currentLevelAddress;
+        if ((isTagMission(currentLevel) || isAcolyteMission(currentLevel)) && *(uint8_t*)gameModeAddress == 0x08) {
+            *(uint8_t*)exitToMainMenuAddress = 0x01;
+        }
+        Sleep(1000);
+    }
+       
+            
+        
+    
 
     
    
