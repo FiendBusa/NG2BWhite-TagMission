@@ -11,7 +11,7 @@ struct Coords {
 struct LevelData {
     uint16_t missionID;
     float x, y, z, w;
-    int difficulty;
+    uint8_t difficulty;
 };
 
 //ACOLYTE WILL STILL PULL CORRECT COORDS FOR WHATEVER REASON
@@ -99,7 +99,7 @@ bool isTagMission(uint16_t currentLevel) {
     return false;
 }
 
-int getDifficultyScale(uint16_t currentLevel) {
+uint8_t getDifficultyScale(uint16_t currentLevel) {
     for (auto& level : levelDataArray) {
         if (level.missionID == currentLevel) { return level.difficulty; }
     }
@@ -372,7 +372,7 @@ DWORD WINAPI MainThread(LPVOID param) {
         if (isTagMission(currentLevel) || isAcolyteMission(currentLevel)) {
             *(uint8_t*)ccFlagAddress = 0x01;
 
-            int difficultyScale = getDifficultyScale(currentLevel);
+            uint8_t difficultyScale = getDifficultyScale(currentLevel);
 
             *(uint8_t*)difficultyAddress = difficultyScale;
 
