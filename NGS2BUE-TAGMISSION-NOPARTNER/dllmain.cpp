@@ -374,7 +374,7 @@ DWORD WINAPI MainThread(LPVOID param) {
 
             int difficultyScale = getDifficultyScale(currentLevel);
 
-            *(uint8_t*)difficultyAddress = difficultyAddress;
+            *(uint8_t*)difficultyAddress = difficultyScale;
 
             if (gameMode == 0x08) {
                 ReturnToMainMenu();
