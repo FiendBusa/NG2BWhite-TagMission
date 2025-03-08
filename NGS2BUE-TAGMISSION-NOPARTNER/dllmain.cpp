@@ -380,7 +380,7 @@ DWORD WINAPI MainThread(LPVOID param) {
                 ReturnToMainMenu();
             }
             if (*(uint16_t*)playerHPAddress <= 0 && gameMode == 0x05) {
-                ReturnToMainMenu();
+                //ReturnToMainMenu();
             }
         }
        
