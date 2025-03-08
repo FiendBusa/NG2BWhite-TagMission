@@ -11,43 +11,46 @@ struct Coords {
 struct LevelData {
     uint16_t missionID;
     float x, y, z, w;
+    int difficulty;
 };
 
 //ACOLYTE WILL STILL PULL CORRECT COORDS FOR WHATEVER REASON
+
 const LevelData levelDataArray[] = {
     // WARRIOR
-    {0x0052, -49.30f,  87.06f,  276.15f,  0.00f},
-    {0x0053, -51.95f,  21.38f,  218.86f,  0.00f},
-    {0x0054, -155.80f, -25.31f,  86.72f,  0.00f},
-    {0x0055, -205.00f,  29.76f, -51.00f,  0.00f},
-    {0x0056, 1.25f,   14.85f,  128.00f,  0.00f},
-    {0x0057, 8.00f,  305.24f,  -38.00f,  0.00f},
-    {0x0058, 155.25f,   5.87f, -256.00f,  0.00f},
-    {0x0059, 196.25f,  78.68f,  155.00f,  0.00f},
-    {0x005A, 156.25f,   2.44f,  155.08f,  0.00f},
-    {0x005B, -27.80f, -53.24f, -124.30f,  0.00f},
+    {0x0052, -49.30f,  87.06f,  276.15f,  0.00f, 2},
+    {0x0053, -51.95f,  21.38f,  218.86f,  0.00f, 2},
+    {0x0054, -155.80f, -25.31f,  86.72f,  0.00f, 2},
+    {0x0055, -205.00f,  29.76f, -51.00f,  0.00f, 2},
+    {0x0056, 1.25f,   14.85f,  128.00f,  0.00f, 2},
+    {0x0057, 8.00f,  305.24f,  -38.00f,  0.00f, 2},
+    {0x0058, 155.25f,   5.87f, -256.00f,  0.00f, 2},
+    {0x0059, 196.25f,  78.68f,  155.00f,  0.00f, 2},
+    {0x005A, 156.25f,   2.44f,  155.08f,  0.00f, 2},
+    {0x005B, -27.80f, -53.24f, -124.30f,  0.00f, 2},
 
     // MENTOR
-    {0x005C, -1.25f,  0.01f,  -4.65f,   0.00f},
-    {0x005D, 95.00f,  7.35f, -108.00f,  0.00f},
-    {0x005E, -205.00f,  29.76f,  -51.00f,  0.00f},
-    {0x005F, 156.30f,  5.22f, -120.30f,  0.00f},
-    {0x0060, 8.00f,  305.24f, -38.00f,  0.00f},
+    {0x005C, -1.25f,  0.01f,  -4.65f,   0.00f, 3},
+    {0x005D, 95.00f,  7.35f, -108.00f,  0.00f, 3},
+    {0x005E, -205.00f,  29.76f,  -51.00f,  0.00f, 3},
+    {0x005F, 156.30f,  5.22f, -120.30f,  0.00f, 3},
+    {0x0060, 8.00f,  305.24f, -38.00f,  0.00f, 3},
 
-    // MASTER
-    {0x0066, -153.10f, -25.31f,  69.25f,   0.00f},
-    {0x0067, 395.98f,   30.06f, -190.00f,  0.00f},
-    {0x0068, 117.00f,  311.76f,  510.00f,  0.00f},
-    {0x0069, -1.25f,    1.00f,  140.35f,  0.00f},
-    {0x006A, 1.25f,  -223.27f,  190.00f,  0.00f},
+    // MASTER 
+    {0x0066, -153.10f, -25.31f,  69.25f,   0.00f, 4},
+    {0x0067, 395.98f,   30.06f, -190.00f,  0.00f, 4},
+    {0x0068, 117.00f,  311.76f,  510.00f,  0.00f, 4},
+    {0x0069, -1.25f,    1.00f,  140.35f,  0.00f, 4},
+    {0x006A, 1.25f,  -223.27f,  190.00f,  0.00f, 4},
 
     // UN 
-    {0x0070, 1.25f,  -223.27f,  190.00f,  0.00f},
-    {0x0071, 156.25f,   2.44f,  155.08f,  0.00f},
-    {0x0072, 58.50f,    3.53f,  -41.25f,  0.00f},
-    {0x0073, -52.65f,  86.93f,  267.00f,  0.00f},
-    {0x0074, -896.55f, 597.44f, -567.48f,  0.00f}
+    {0x0070, 1.25f,  -223.27f,  190.00f,  0.00f, 4},
+    {0x0071, 156.25f,   2.44f,  155.08f,  0.00f, 4},
+    {0x0072, 58.50f,    3.53f,  -41.25f,  0.00f, 4},
+    {0x0073, -52.65f,  86.93f,  267.00f,  0.00f, 4},
+    {0x0074, -896.55f, 597.44f, -567.48f,  0.00f, 4}
 };
+
 
 const uint16_t acolyteMissions[] = {
     0x0038, 0x0039, 0x003A, 0x003B, 0x003C,
@@ -74,6 +77,8 @@ extern "C" uintptr_t ccFlagAddress = 0x222EE92;
 
 uintptr_t playerHPAddress = 0x3380DB6;
 
+uintptr_t difficultyAddress = 0x36265C8;
+
 
 extern "C" void SetTagMissionCoords(Coords* coords, uint16_t currentLevel) {
 
@@ -92,6 +97,13 @@ bool isTagMission(uint16_t currentLevel) {
         if (level.missionID == currentLevel) { return true; }
     }
     return false;
+}
+
+int getDifficultyScale(uint16_t currentLevel) {
+    for (auto& level : levelDataArray) {
+        if (level.missionID == currentLevel) { return level.difficulty; }
+    }
+    return 1;
 }
 
 bool isAcolyteMission(uint16_t missionID) {
@@ -346,6 +358,7 @@ DWORD WINAPI MainThread(LPVOID param) {
     gameModeAddress += baseAddress;
     ccFlagAddress += baseAddress;
     playerHPAddress += baseAddress;
+    difficultyAddress += baseAddress;
 
     int hookSize = sizeof(hooks) / sizeof(HookInfo);
     ApplyHooks(hooks, hookSize, baseAddress);
@@ -354,13 +367,19 @@ DWORD WINAPI MainThread(LPVOID param) {
 
 
         uint16_t currentLevel = *(uint16_t*)currentLevelAddress;
+        uint8_t gameMode = *(uint8_t*)gameModeAddress;
+
         if (isTagMission(currentLevel) || isAcolyteMission(currentLevel)) {
             *(uint8_t*)ccFlagAddress = 0x01;
 
-            if (*(uint8_t*)gameModeAddress == 0x08) {
+            int difficultyScale = getDifficultyScale(currentLevel);
+
+            *(uint8_t*)difficultyAddress = difficultyAddress;
+
+            if (gameMode == 0x08) {
                 ReturnToMainMenu();
             }
-            if (*(uint16_t*)playerHPAddress <= 0) {
+            if (*(uint16_t*)playerHPAddress <= 0 && gameMode == 0x05) {
                 ReturnToMainMenu();
             }
         }
