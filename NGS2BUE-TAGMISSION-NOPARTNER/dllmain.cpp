@@ -66,11 +66,13 @@ extern "C" Coords coordsToAssign = { 0.00, 0.00, 0.00, 0.00 };
 
 extern "C" uintptr_t inventoryStartAddress = 0x3625848;
 
-extern "C" uintptr_t exitToMainMenuAddress = 0x222EE98;
+uintptr_t exitToMainMenuAddress = 0x222EE98;
 
-extern "C" uintptr_t gameModeAddress = 0x222EE9C;
+uintptr_t gameModeAddress = 0x222EE9C;
 
 extern "C" uintptr_t ccFlagAddress = 0x222EE92;
+
+uintptr_t playerHPAddress = 0x3380DB6;
 
 
 extern "C" void SetTagMissionCoords(Coords* coords, uint16_t currentLevel) {
@@ -94,6 +96,11 @@ bool isTagMission(uint16_t currentLevel) {
 
 bool isAcolyteMission(uint16_t missionID) {
     return std::find(std::begin(acolyteMissions), std::end(acolyteMissions), missionID) != std::end(acolyteMissions);
+}
+
+void ReturnToMainMenu() {
+    *(uint8_t*)exitToMainMenuAddress = 0x01;
+    *(uint8_t*)ccFlagAddress = 0x00;
 }
 
 void  __attribute__((naked))InjectCoordsTag() {
@@ -338,7 +345,7 @@ DWORD WINAPI MainThread(LPVOID param) {
     exitToMainMenuAddress += baseAddress;
     gameModeAddress += baseAddress;
     ccFlagAddress += baseAddress;
-
+    playerHPAddress += baseAddress;
 
     int hookSize = sizeof(hooks) / sizeof(HookInfo);
     ApplyHooks(hooks, hookSize, baseAddress);
@@ -351,11 +358,15 @@ DWORD WINAPI MainThread(LPVOID param) {
             *(uint8_t*)ccFlagAddress = 0x01;
 
             if (*(uint8_t*)gameModeAddress == 0x08) {
-                *(uint8_t*)exitToMainMenuAddress = 0x01;
-                *(uint8_t*)ccFlagAddress = 0x00;
+                ReturnToMainMenu();
             }
-
+            if (*(uint16_t*)playerHPAddress <= 0) {
+                ReturnToMainMenu();
+            }
         }
+       
+
+        
         Sleep(1000);
     }
 }
