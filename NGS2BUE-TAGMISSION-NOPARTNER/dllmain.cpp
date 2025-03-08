@@ -386,7 +386,7 @@ DWORD WINAPI MainThread(LPVOID param) {
        
 
         
-        Sleep(1000);
+        Sleep(10);
     }
 }
        
